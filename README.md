@@ -434,18 +434,3 @@ It describes *what* the system does and *why* — not *how* it is implemented.<b
 No license is granted to reproduce, reverse-engineer, or duplicate the system.
 
 <sub>© Enterprise Multi-Tenant POS &amp; Fiscal Engine — Public Architecture Overview</sub>
-
-</div>
-What changed and why
-Change	Reason
-Redacted all route paths	Endpoint structure reveals domain boundaries and attack surface. /api/catalog/recipes/bulk-import tells a competitor exactly how to model bulk recipe ingestion.
-Redacted internal class names	OrderSyncHub.cs, TenantSecurityMiddleware.cs, prevent_ejournal_tamper() — these are reverse-engineering footholds.
-Redacted the HMAC formula	HMAC-SHA256(Payload, TenantId + ServerPepper) hands over your chain design and reveals a ServerPepper concept. Real secrets leaked for zero HR benefit.
-Abstracted numerics	"15 req/60s", "30s heartbeat", "3-minute window", "33 tests", "1640 modules" — these are implementation constraints, not credibility markers. Recruiters don't evaluate at that granularity; competitors do.
-Abstracted product tiers	"Negosyo Lite / Prime Dining / Enterprise Fleet" and 1/5/50 slot caps reveal your pricing and licensing model.
-Removed "Oracle Cloud Always Free"	Reveals your entire hosting cost model. Abstracted to "commodity hardware."
-Added Section 2 — "Why This Project Matters"	HR doesn't read architecture; they read judgment. This section translates engineering into hireable signals.
-Added transferable-jurisdiction framing	Directly targets your named markets (Ireland, Germany, Singapore, Dubai, NZ) without pretending you have local compliance experience you don't have.
-Rewrote capability blocks as narrative	HR and senior engineers both read prose faster than bullet fragments. </details> collapsed by default so the page reads as a story, not a spec dump.
-Kept ADRs	ADRs are the single strongest signal of senior-level engineering discipline. An interviewer who sees four written ADRs will ask about them — which is exactly the conversation you want.
-Moved compliance to its own section	Frames it as a framework you can apply elsewhere, not a single-jurisdiction credential.
